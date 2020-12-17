@@ -496,7 +496,7 @@ header nav ul li a.bordered {
   border-top: 2px solid #fff;
   letter-spacing: -0.05em;
   margin-top: .6em;
-  margin-bottom: .6em;
+  margin-bottom: .4em;
 }
 @media screen and (max-width: 540px) {
   #content section.intro h1 {
