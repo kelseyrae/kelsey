@@ -514,8 +514,8 @@ header nav ul li a.bordered {
   }
 }
 #content section.intro p {
-  font-size: 1.5em;
-  line-height: 1.5em;
+  font-size: 1em;
+  line-height: 1.2em;
   letter-spacing: 0.02em;
 }
 #content section.row {
