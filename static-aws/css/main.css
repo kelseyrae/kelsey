@@ -492,7 +492,7 @@ header nav ul li a.bordered {
   }
 }
 #content section.intro h1 {
-  font-size: 6em;
+  font-size: 4em;
   border-top: 2px solid #fff;
   letter-spacing: -0.05em;
   margin-top: .6em;
@@ -514,7 +514,7 @@ header nav ul li a.bordered {
   }
 }
 #content section.intro p {
-  font-size: 1em;
+  font-size: 1.35em;
   line-height: 1.2em;
   letter-spacing: 0.02em;
 }
