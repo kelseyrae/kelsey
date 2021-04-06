@@ -479,7 +479,7 @@ header nav ul li a.bordered {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1em;
+  border: 2px solid #e85151;
   margin-bottom: 1em;
 }
 #content section.intro:after {
@@ -494,9 +494,8 @@ header nav ul li a.bordered {
 }
 #content section.intro h1 {
   font-size: 2em;
-  border-top: 2px solid #fff;
   letter-spacing: -0.05em;
-  margin-top: .6em;
+  margin-top: 1em;
   margin-bottom: .4em;
 }
 @media screen and (max-width: 540px) {
