@@ -496,7 +496,7 @@ header nav ul li a.bordered {
 #content section.intro h1 {
   font-size: 2em;
   letter-spacing: -0.05em;
-  margin-top: 1em;
+  margin-top: 0.5em;
   margin-bottom: .4em;
 }
 @media screen and (max-width: 540px) {
@@ -523,7 +523,6 @@ header nav ul li a.bordered {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 2em;
   padding-bottom: 5em;
 }
 #content section.row:after {
