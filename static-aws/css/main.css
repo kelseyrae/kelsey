@@ -479,6 +479,7 @@ header nav ul li a.bordered {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1em;
   margin-bottom: 1em;
 }
 #content section.intro:after {
