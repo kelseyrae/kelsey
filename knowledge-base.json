@@ -1,0 +1,94 @@
+{
+  "chunks": [
+    {
+      "id": "bio-overview",
+      "category": "background",
+      "content": "Kelsey Conophy is a seasoned technical AI product leader, entrepreneur, and startup advisor based in Bozeman, MT. She is open to speaking engagements, advisor appointments, and fractional CPO roles. She builds AI products and leads teams that build AI products.",
+      "keywords": ["AI product leader", "entrepreneur", "advisor", "CPO", "Bozeman", "Montana", "speaking", "fractional"]
+    },
+    {
+      "id": "bio-experience",
+      "category": "background",
+      "content": "Kelsey is an AI product leader, entrepreneur, and builder with 13+ years of experience creating and scaling AI systems that operate at global scale. Her expertise spans AI agents, LLMs, deep learning, reinforcement learning, and machine learning systems.",
+      "keywords": ["13 years", "experience", "AI agents", "LLMs", "deep learning", "reinforcement learning", "machine learning", "global scale"]
+    },
+    {
+      "id": "bio-companies",
+      "category": "background",
+      "content": "Kelsey has led R&D, AI platform, and applied-AI teams across GitHub, Amazon, Intuit and multiple hyper-growth startups including Attentive, Rent the Runway, and Birchbox. She has delivered industry-defining products and next-generation AI capabilities in production.",
+      "keywords": ["GitHub", "Amazon", "Intuit", "Attentive", "Rent the Runway", "Birchbox", "R&D", "AI platform", "applied AI", "startups"]
+    },
+    {
+      "id": "bio-leadership",
+      "category": "background",
+      "content": "Kelsey has 7+ years of experience building and leading high-impact teams of 60+ people with cultures rooted in experimentation, data, and customer obsession. She thrives at the intersection of R&D and applied AI product, turning emerging AI research into scalable, production products that deliver impact.",
+      "keywords": ["leadership", "teams", "60+ people", "7 years", "experimentation", "data", "customer obsession", "R&D", "research to production"]
+    },
+    {
+      "id": "bio-strengths",
+      "category": "background",
+      "content": "Kelsey is most energized by 0-1 invention and scaling 1-n products that push boundaries of what's possible with AI. She excels at turning emerging AI research into scalable, production products.",
+      "keywords": ["0-1", "invention", "scaling", "1-n", "innovation", "boundaries", "emerging research"]
+    },
+    {
+      "id": "bio-personal",
+      "category": "personal",
+      "content": "In her spare time Kelsey enjoys skiing the backcountry and climbing the limestone faces in beautiful southwest Montana.",
+      "keywords": ["skiing", "backcountry", "climbing", "limestone", "Montana", "hobbies", "outdoor"]
+    },
+    {
+      "id": "project-intuit-assist",
+      "category": "projects",
+      "content": "Intuit Assist for Help Interactions is Intuit's Generative AI assistant that helps customers and experts get support and complete tasks more efficiently and easily. Technologies used include Intuit's Foundation LLM FILM, and public and open source LLMs including GPT 3.5 & 4, Gemini, Claude 3 Opus & Haiku, and Mistral Large.",
+      "keywords": ["Intuit Assist", "Intuit", "Generative AI", "assistant", "support", "LLM", "FILM", "GPT", "Gemini", "Claude", "Mistral"]
+    },
+    {
+      "id": "project-sticky-notes",
+      "category": "projects",
+      "content": "Sticky Notes is a simple meeting notes app for anyone that Kelsey built.",
+      "keywords": ["Sticky Notes", "meeting notes", "app", "productivity"]
+    },
+    {
+      "id": "project-catalyst-app",
+      "category": "projects",
+      "content": "Catalyst SPORT App is a workout tracking app for personal trainers and their clients that Kelsey built.",
+      "keywords": ["Catalyst SPORT", "Catalyst", "workout tracking", "personal trainers", "fitness", "app"]
+    },
+    {
+      "id": "project-catalyst-portal",
+      "category": "projects",
+      "content": "Catalyst SPORT Client Portal is a client management platform for personal trainers that Kelsey built.",
+      "keywords": ["Catalyst SPORT", "Catalyst", "client management", "personal trainers", "platform", "portal"]
+    },
+    {
+      "id": "project-workzeit",
+      "category": "projects",
+      "content": "Workzeit is a cultural-fit candidate assessment tool for recruiters that Kelsey built. It's available at workzeit.com.",
+      "keywords": ["Workzeit", "cultural fit", "candidate assessment", "recruiters", "hiring", "HR"]
+    },
+    {
+      "id": "project-worktapp",
+      "category": "projects",
+      "content": "WorkTapp and PlayTapp are personality-based networking Android apps for anyone that Kelsey built.",
+      "keywords": ["WorkTapp", "PlayTapp", "personality", "networking", "Android", "app"]
+    },
+    {
+      "id": "skills-technical",
+      "category": "skills",
+      "content": "Kelsey has expertise in AI agents, LLMs (Large Language Models), deep learning, reinforcement learning, and machine learning systems. She has worked with technologies including GPT models, Claude, Gemini, Mistral, and custom foundation models like Intuit's FILM.",
+      "keywords": ["AI agents", "LLMs", "deep learning", "reinforcement learning", "machine learning", "GPT", "Claude", "Gemini", "Mistral", "foundation models"]
+    },
+    {
+      "id": "skills-product",
+      "category": "skills",
+      "content": "Kelsey excels at AI product leadership, R&D, applied AI, building AI platforms, and leading technical teams. She specializes in turning research into production products and scaling AI systems.",
+      "keywords": ["product leadership", "R&D", "applied AI", "AI platforms", "technical leadership", "research to production", "scaling"]
+    },
+    {
+      "id": "contact-info",
+      "category": "contact",
+      "content": "Kelsey Conophy can be contacted via email at kelseyconophy@gmail.com. She is on LinkedIn at linkedin.com/in/kelseyconophy and GitHub at github.com/kelseyrae. She is based in Bozeman, MT and is open to speaking engagements, advisor appointments, and fractional CPO roles.",
+      "keywords": ["contact", "email", "kelseyconophy@gmail.com", "LinkedIn", "GitHub", "Bozeman", "speaking", "advisor", "CPO", "fractional"]
+    }
+  ]
+}

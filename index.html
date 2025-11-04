@@ -7,6 +7,7 @@
 
 	<link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/kelseyconophy/fluidbox.min.css">
 	<link rel="stylesheet" href="./static-aws/css/main.css">
+	<link rel="stylesheet" href="./chatbot.css">
 
 	<title>Kelsey Conophy</title>
 
@@ -86,7 +87,25 @@
 
 	</script>
 
+	<!-- RAG Chatbot -->
+	<button id="chat-button" title="Ask me about Kelsey">💬</button>
 
+	<div id="chat-window">
+		<div id="chat-header">
+			<div>
+				<h3>Ask about Kelsey</h3>
+				<p>AI-powered assistant</p>
+			</div>
+			<button id="chat-close">&times;</button>
+		</div>
+		<div id="chat-messages"></div>
+		<div id="chat-input-container">
+			<input type="text" id="chat-input" placeholder="Loading..." disabled>
+			<button id="chat-send" disabled>➤</button>
+		</div>
+	</div>
 
+	<script type="module" src="./chatbot.js"></script>
+	<script src="./chatbot-ui.js"></script>
 
 </body></html>
