@@ -119,6 +119,3 @@ Potential improvements:
 - **WebLLM**: https://github.com/mlc-ai/web-llm
 - **Model**: Phi-3-mini by Microsoft (https://huggingface.co/microsoft/Phi-3-mini-4k-instruct)
 
-## License
-
-MIT License - Feel free to use for your own website!

@@ -68,30 +68,147 @@ class RAGChatbot {
     }
 
     /**
-     * Retrieve relevant context chunks based on user query
-     * Uses simple keyword matching and scoring
+     * Tokenize query into searchable words
      */
-    retrieveContext(query, topK = 5) {
+    tokenize(text) {
+        return text.toLowerCase()
+            .split(/\s+/)
+            .filter(word => word.length > 2)
+            .map(word => word.replace(/[^\w]/g, ''));
+    }
+
+    /**
+     * Count occurrences of a word in text
+     */
+    countOccurrences(text, word) {
+        const regex = new RegExp('\\b' + word + '\\b', 'gi');
+        const matches = text.match(regex);
+        return matches ? matches.length : 0;
+    }
+
+    /**
+     * Count how many chunks contain this term (for IDF calculation)
+     */
+    countChunksWithTerm(word) {
+        if (!this.knowledgeBase || !this.knowledgeBase.chunks) return 1;
+        
+        let count = 0;
+        for (const chunk of this.knowledgeBase.chunks) {
+            const contentLower = chunk.content.toLowerCase();
+            if (contentLower.includes(word)) {
+                count++;
+            }
+        }
+        return Math.max(count, 1); // Avoid division by zero
+    }
+
+    /**
+     * Determine if query matches a category
+     */
+    queryMatchesCategory(query, category, subcategory) {
+        const queryLower = query.toLowerCase();
+        
+        // Category keywords
+        const categoryMap = {
+            'experience': ['work', 'job', 'role', 'position', 'worked', 'career', 'employed'],
+            'skills': ['skill', 'expertise', 'technology', 'tech', 'know', 'experience with'],
+            'education': ['school', 'university', 'degree', 'education', 'study', 'studied'],
+            'projects': ['project', 'built', 'created', 'developed', 'made'],
+            'achievements': ['achievement', 'accomplishment', 'success', 'result', 'impact'],
+            'contact': ['contact', 'reach', 'email', 'phone', 'linkedin', 'github'],
+            'personal': ['hobby', 'personal', 'free time', 'spare time', 'interests']
+        };
+        
+        if (categoryMap[category]) {
+            return categoryMap[category].some(keyword => queryLower.includes(keyword));
+        }
+        
+        return false;
+    }
+
+    /**
+     * Determine optimal topK based on query complexity
+     */
+    determineTopK(query) {
+        const queryLower = query.toLowerCase();
+        
+        // Broad overview queries need more context
+        if (queryLower.includes('tell me about') || 
+            queryLower.includes('overview') || 
+            queryLower.includes('summary') ||
+            queryLower.includes('background')) {
+            return 8;
+        }
+        
+        // Specific factual queries need focused context
+        if (queryLower.includes('when') || 
+            queryLower.includes('where') || 
+            queryLower.includes('specific') ||
+            queryLower.includes('how many') ||
+            queryLower.includes('which')) {
+            return 3;
+        }
+        
+        // Default
+        return 5;
+    }
+
+    /**
+     * Get recency weight (more recent = higher score)
+     */
+    getRecencyWeight(timePeriod) {
+        if (!timePeriod) return 1.0;
+        
+        const timeLower = timePeriod.toLowerCase();
+        
+        if (timeLower === 'current' || timeLower.includes('present') || timeLower.includes('2024')) {
+            return 1.3;
+        }
+        if (timeLower.includes('2023') || timeLower.includes('2022')) {
+            return 1.2;
+        }
+        if (timeLower.includes('2021') || timeLower.includes('2020')) {
+            return 1.1;
+        }
+        
+        return 1.0;
+    }
+
+    /**
+     * Retrieve relevant context chunks based on user query
+     * Uses BM25-style scoring with category boosting and dynamic topK
+     */
+    retrieveContext(query, topK = null) {
         if (!this.knowledgeBase || !this.knowledgeBase.chunks) {
             return [];
         }
 
-        const queryLower = query.toLowerCase();
-        const queryWords = queryLower.split(/\s+/).filter(word => word.length > 2);
+        // Determine optimal topK if not specified
+        if (topK === null) {
+            topK = this.determineTopK(query);
+        }
 
-        // Score each chunk based on keyword matches
+        const queryWords = this.tokenize(query);
+        const totalChunks = this.knowledgeBase.chunks.length;
+
+        // Score each chunk using BM25-inspired algorithm
         const scoredChunks = this.knowledgeBase.chunks.map(chunk => {
             let score = 0;
 
-            // Check content for query words
-            const contentLower = chunk.content.toLowerCase();
+            // TF-IDF-like scoring
             queryWords.forEach(word => {
-                if (contentLower.includes(word)) {
-                    score += 2;
+                const termFreq = this.countOccurrences(chunk.content, word);
+                const docFreq = this.countChunksWithTerm(word);
+                
+                // BM25-style formula (simplified)
+                if (termFreq > 0) {
+                    const idf = Math.log((totalChunks - docFreq + 0.5) / (docFreq + 0.5) + 1);
+                    const tf = (termFreq * 2.0) / (termFreq + 1.0); // Saturation function
+                    score += tf * idf;
                 }
             });
 
-            // Check keywords for exact matches
+            // Keyword exact matches (high value)
             if (chunk.keywords) {
                 chunk.keywords.forEach(keyword => {
                     const keywordLower = keyword.toLowerCase();
@@ -101,19 +218,35 @@ class RAGChatbot {
                         }
                     });
 
-                    // Exact match bonus
-                    if (queryLower.includes(keywordLower)) {
+                    // Exact keyword match in query
+                    if (query.toLowerCase().includes(keywordLower)) {
                         score += 5;
                     }
                 });
+            }
+
+            // Category boost (if query matches category)
+            if (this.queryMatchesCategory(query, chunk.category, chunk.subcategory)) {
+                score *= 1.5;
+            }
+
+            // Recency boost (more recent = slightly higher)
+            if (chunk.time_period) {
+                score *= this.getRecencyWeight(chunk.time_period);
+            }
+
+            // Confidence boost (high confidence chunks score slightly better)
+            if (chunk.confidence === 'high') {
+                score *= 1.1;
             }
 
             return { chunk, score };
         });
 
         // Sort by score and return top K
+        const threshold = 0.5; // Minimum score threshold
         return scoredChunks
-            .filter(item => item.score > 0)
+            .filter(item => item.score > threshold)
             .sort((a, b) => b.score - a.score)
             .slice(0, topK)
             .map(item => item.chunk);
@@ -140,7 +273,19 @@ class RAGChatbot {
         }
 
         // Create the prompt with context
-        const systemPrompt = `You are a helpful assistant answering questions about Kelsey Conophy's background, experience, and projects. Use the provided context to answer questions accurately. If the context doesn't contain enough information to answer the question, say so honestly. Keep responses concise and friendly.`;
+        const systemPrompt = `You are a helpful assistant answering questions about Kelsey Conophy's background, experience, and projects.
+
+CRITICAL RULES TO PREVENT HALLUCINATIONS:
+1. ONLY use information explicitly stated in the provided context
+2. If the context doesn't contain information to answer the question, say "I don't have information about that in my knowledge base"
+3. Do NOT infer, extrapolate, or make assumptions beyond what's explicitly stated
+4. When citing numbers, dates, or specific facts, use them EXACTLY as stated in the context
+5. Distinguish between facts and interpretations clearly
+6. If uncertain about any detail, acknowledge it with phrases like "Based on the available information..." or "The context indicates..."
+7. Never fabricate company names, dates, statistics, or achievements not in the context
+8. If asked about recent events or information that might be outdated, acknowledge the knowledge cutoff
+
+Keep responses concise, accurate, and friendly. Always prioritize accuracy over completeness.`;
 
         const userPrompt = contextStr
             ? `Context:\n${contextStr}\n\nQuestion: ${userMessage}\n\nAnswer based on the context above:`
