@@ -24,6 +24,28 @@ class ChatbotUI {
 
         this.attachEventListeners();
         this.createChatbot();
+        
+        // Start preloading the model in the background
+        this.preloadModel();
+    }
+
+    /**
+     * Preload the model in the background when page loads
+     */
+    async preloadModel() {
+        console.log('Starting background model preload...');
+        
+        try {
+            await this.chatbot.initialize((progress) => {
+                // Log progress to console, but don't show to user yet
+                console.log('Preload progress:', progress.message);
+            });
+            
+            console.log('Model preloaded successfully!');
+        } catch (error) {
+            console.error('Model preload failed:', error);
+            // Don't show error to user - they'll see it when they open chat
+        }
     }
 
     /**
@@ -138,6 +160,13 @@ class ChatbotUI {
      */
     async initializeChatbot() {
         if (this.isInitializing) return;
+
+        // If already initialized from preload, just show ready message
+        if (this.chatbot.isInitialized) {
+            this.addSystemMessage('Ready! Ask me anything about Kelsey.');
+            this.enableInput();
+            return;
+        }
 
         this.isInitializing = true;
         this.addSystemMessage('Initializing AI assistant...');
