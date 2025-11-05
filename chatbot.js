@@ -9,7 +9,7 @@ class RAGChatbot {
         this.knowledgeBase = null;
         this.isInitialized = false;
         this.isLoading = false;
-        this.selectedModel = "Phi-3-mini-4k-instruct-q4f16_1-MLC"; // ~2GB, good quality
+        this.selectedModel = "Llama-3.2-1B-Instruct-q4f16_1-MLC"; // ~770MB, faster download
     }
 
     /**
