@@ -45,6 +45,8 @@ class ChatbotUI {
         } catch (error) {
             console.error('Model preload failed:', error);
             // Don't show error to user - they'll see it when they open chat
+            // Reset the loading flag so user can try again when opening chat
+            this.chatbot.isLoading = false;
         }
     }
 
@@ -114,27 +116,35 @@ class ChatbotUI {
      * Open chat window
      */
     async openChat() {
-        const chatWindow = document.getElementById('chat-window');
-        const chatButton = document.getElementById('chat-button');
+        try {
+            const chatWindow = document.getElementById('chat-window');
+            const chatButton = document.getElementById('chat-button');
 
-        if (chatWindow) {
-            chatWindow.classList.add('open');
-            this.isOpen = true;
-        }
+            if (chatWindow) {
+                chatWindow.classList.add('open');
+                this.isOpen = true;
+            } else {
+                console.error('Chat window element not found');
+                return;
+            }
 
-        if (chatButton) {
-            chatButton.style.display = 'none';
-        }
+            if (chatButton) {
+                chatButton.style.display = 'none';
+            }
 
-        // Initialize chatbot if not already initialized
-        if (!this.chatbot.isInitialized && !this.isInitializing) {
-            await this.initializeChatbot();
-        }
+            // Initialize chatbot if not already initialized
+            if (!this.chatbot.isInitialized && !this.isInitializing) {
+                await this.initializeChatbot();
+            }
 
-        // Focus input
-        const input = document.getElementById('chat-input');
-        if (input) {
-            input.focus();
+            // Focus input
+            const input = document.getElementById('chat-input');
+            if (input) {
+                input.focus();
+            }
+        } catch (error) {
+            console.error('Error opening chat:', error);
+            this.addSystemMessage('Failed to open chat. Please refresh the page.');
         }
     }
 
