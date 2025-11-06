@@ -9,7 +9,7 @@ class RAGChatbot {
         this.knowledgeBase = null;
         this.isInitialized = false;
         this.isLoading = false;
-        this.selectedModel = "Qwen2.5-3B-Instruct-q4f16_1-MLC"; // ~2GB, high quality, excellent for factual Q&A
+        this.selectedModel = "Phi-3.5-mini-instruct-q4f16_1-MLC"; // ~2.2GB, excellent quality and instruction following
     }
 
     /**
@@ -110,13 +110,14 @@ class RAGChatbot {
         
         // Category keywords
         const categoryMap = {
-            'experience': ['work', 'job', 'role', 'position', 'worked', 'career', 'employed'],
-            'skills': ['skill', 'expertise', 'technology', 'tech', 'know', 'experience with'],
+            'experience': ['work', 'job', 'role', 'company', 'companies', 'position', 'worked', 'career', 'employed', 'where'],
+            'skills': ['skill', 'expertise', 'technology', 'tech', 'know', 'experience with', 'technologies'],
             'education': ['school', 'university', 'degree', 'education', 'study', 'studied'],
             'projects': ['project', 'built', 'created', 'developed', 'made'],
-            'achievements': ['achievement', 'accomplishment', 'success', 'result', 'impact'],
+            'achievements': ['achievement', 'accomplishment', 'success', 'result', 'impact', 'metric'],
             'contact': ['contact', 'reach', 'email', 'phone', 'linkedin', 'github'],
-            'personal': ['hobby', 'personal', 'free time', 'spare time', 'interests']
+            'personal': ['hobby', 'personal', 'free time', 'spare time', 'interests'],
+            'background': ['about', 'who', 'background', 'overview', 'tell me']
         };
         
         if (categoryMap[category]) {
@@ -132,6 +133,15 @@ class RAGChatbot {
     determineTopK(query) {
         const queryLower = query.toLowerCase();
         
+        // List queries need more context to show all items
+        if (queryLower.includes('companies') || 
+            queryLower.includes('all') ||
+            queryLower.includes('list') ||
+            queryLower.includes('where has') ||
+            queryLower.includes('worked at')) {
+            return 10; // More chunks for comprehensive lists
+        }
+        
         // Broad overview queries need more context
         if (queryLower.includes('tell me about') || 
             queryLower.includes('overview') || 
@@ -146,11 +156,11 @@ class RAGChatbot {
             queryLower.includes('specific') ||
             queryLower.includes('how many') ||
             queryLower.includes('which')) {
-            return 3;
+            return 5;
         }
         
         // Default
-        return 5;
+        return 6;
     }
 
     /**
@@ -244,10 +254,25 @@ class RAGChatbot {
         });
 
         // Sort by score and return top K
-        const threshold = 0.5; // Minimum score threshold
-        return scoredChunks
-            .filter(item => item.score > threshold)
-            .sort((a, b) => b.score - a.score)
+        const sortedChunks = scoredChunks
+            .sort((a, b) => b.score - a.score);
+        
+        // Log retrieval results for debugging
+        console.log(`\n=== RETRIEVAL DEBUG ===`);
+        console.log(`Query: "${query}"`);
+        console.log(`TopK requested: ${topK}`);
+        console.log(`Total chunks scored: ${sortedChunks.length}`);
+        console.log(`\nTop ${Math.min(15, sortedChunks.length)} scored chunks:`);
+        sortedChunks.slice(0, 15).forEach((item, idx) => {
+            console.log(`  ${idx + 1}. [${item.chunk.id}] Score: ${item.score.toFixed(3)} - ${item.chunk.content.substring(0, 80)}...`);
+        });
+        
+        // Lower threshold to 0.1 to capture more relevant chunks
+        const threshold = 0.1;
+        const filteredChunks = sortedChunks.filter(item => item.score > threshold);
+        console.log(`\nChunks above threshold (${threshold}): ${filteredChunks.length}`);
+        
+        return filteredChunks
             .slice(0, topK)
             .map(item => item.chunk);
     }
