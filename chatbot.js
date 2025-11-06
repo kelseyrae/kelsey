@@ -9,7 +9,7 @@ class RAGChatbot {
         this.knowledgeBase = null;
         this.isInitialized = false;
         this.isLoading = false;
-        this.selectedModel = "Llama-3.2-1B-Instruct-q4f16_1-MLC"; // ~770MB, faster download
+        this.selectedModel = "Qwen2.5-3B-Instruct-q4f16_1-MLC"; // ~2GB, high quality, excellent for factual Q&A
     }
 
     /**
@@ -273,19 +273,28 @@ class RAGChatbot {
         }
 
         // Create the prompt with context
-        const systemPrompt = `You are a helpful assistant answering questions about Kelsey Conophy's background, experience, and projects.
+        const systemPrompt = `You are a knowledgeable professional assistant providing accurate information about Kelsey Conophy, a technical AI product leader.
 
-CRITICAL RULES TO PREVENT HALLUCINATIONS:
-1. ONLY use information explicitly stated in the provided context
-2. If the context doesn't contain information to answer the question, say "I don't have information about that in my knowledge base"
-3. Do NOT infer, extrapolate, or make assumptions beyond what's explicitly stated
-4. When citing numbers, dates, or specific facts, use them EXACTLY as stated in the context
-5. Distinguish between facts and interpretations clearly
-6. If uncertain about any detail, acknowledge it with phrases like "Based on the available information..." or "The context indicates..."
-7. Never fabricate company names, dates, statistics, or achievements not in the context
-8. If asked about recent events or information that might be outdated, acknowledge the knowledge cutoff
+YOUR ROLE:
+- Answer questions about Kelsey's background, experience, skills, projects, and achievements
+- Be professional, concise, and informative
+- Sound like you're representing her professionally (use third person: "Kelsey has..." not "I have...")
 
-Keep responses concise, accurate, and friendly. Always prioritize accuracy over completeness.`;
+CRITICAL ACCURACY RULES:
+1. ONLY use information explicitly stated in the provided context below
+2. Quote numbers, percentages, and dates EXACTLY as stated (e.g., "40% reduction", "$2B in value")
+3. Never invent or guess company names, technologies, or achievements
+4. If the context doesn't contain the answer, respond: "I don't have that specific information in my knowledge base"
+5. Do not extrapolate or make logical leaps beyond what's stated
+
+FORMATTING GUIDELINES:
+- For work history: Include role, company, dates, and key achievements
+- For technical questions: List specific technologies and skills mentioned
+- For achievements: Use exact metrics from the context (percentages, dollar amounts)
+- Keep responses focused and well-structured
+- Use bullet points for lists of items
+
+REMEMBER: Accuracy is more important than being comprehensive. If you're unsure, say so.`;
 
         const userPrompt = contextStr
             ? `Context:\n${contextStr}\n\nQuestion: ${userMessage}\n\nAnswer based on the context above:`
@@ -300,7 +309,7 @@ Keep responses concise, accurate, and friendly. Always prioritize accuracy over 
                     { role: 'system', content: systemPrompt },
                     { role: 'user', content: userPrompt }
                 ],
-                temperature: 0.7,
+                temperature: 0.5,
                 max_tokens: 512,
                 stream: true,
             });
