@@ -257,20 +257,9 @@ class RAGChatbot {
         const sortedChunks = scoredChunks
             .sort((a, b) => b.score - a.score);
         
-        // Log retrieval results for debugging
-        console.log(`\n=== RETRIEVAL DEBUG ===`);
-        console.log(`Query: "${query}"`);
-        console.log(`TopK requested: ${topK}`);
-        console.log(`Total chunks scored: ${sortedChunks.length}`);
-        console.log(`\nTop ${Math.min(15, sortedChunks.length)} scored chunks:`);
-        sortedChunks.slice(0, 15).forEach((item, idx) => {
-            console.log(`  ${idx + 1}. [${item.chunk.id}] Score: ${item.score.toFixed(3)} - ${item.chunk.content.substring(0, 80)}...`);
-        });
-        
         // Lower threshold to 0.1 to capture more relevant chunks
         const threshold = 0.1;
         const filteredChunks = sortedChunks.filter(item => item.score > threshold);
-        console.log(`\nChunks above threshold (${threshold}): ${filteredChunks.length}`);
         
         return filteredChunks
             .slice(0, topK)
