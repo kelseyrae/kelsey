@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/kelseyconophy/fluidbox.min.css">
+	<link rel="stylesheet" href="./static-aws/css/main.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+	<title>Places I've Lived - Kelsey Conophy</title>
+
+	<style>
+		#places-map {
+			width: 100%;
+			height: 500px;
+			border-radius: 8px;
+			overflow: hidden;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+		}
+	</style>
+</head>
+<body class="loaded">
+
+
+	<header>
+
+		<div id="logo-container">
+			<div id="logo"><a href="index.html">Kelsey Conophy</a></div>
+			<div id="subtitle">AI product leader &nbsp;&bull;&nbsp; entrepreneur &nbsp;&bull;&nbsp; curious technologist</div>
+		</div>
+
+	</header>
+
+	<div id="content">
+
+		<section class="intro">
+			<h1>Places I've lived and loved.</h1>
+			<p>
+				A quick map of the places that have felt like home over the years. Click a marker to see the story for each stop.
+			</p>
+		</section>
+
+		<section class="row">
+			<div class="col-full">
+				<div id="places-map" role="img" aria-label="Map of places Kelsey has lived"></div>
+			</div>
+		</section>
+
+		<section class="row">
+			<div class="col">
+				<h2>Locations</h2>
+				<p><strong>Bozeman, Montana</strong><br>Current home base in southwest Montana's mountains.</p>
+			</div>
+			<div class="col">
+				<h2>More to come</h2>
+				<p>I'll keep adding to this map as the journey continues.</p>
+			</div>
+		</section>
+
+	</div>
+
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+	<script>
+		(function() {
+			const places = [
+				{
+					name: 'Bozeman, Montana',
+					coords: [45.6770, -111.0429],
+					note: 'Home base for backcountry skiing and climbing.'
+				}
+			];
+
+			const map = L.map('places-map');
+
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				maxZoom: 18,
+				attribution: '&copy; OpenStreetMap contributors'
+			}).addTo(map);
+
+			const markerBounds = [];
+
+			places.forEach((place) => {
+				const marker = L.marker(place.coords).addTo(map);
+				const description = [place.name, place.note].filter(Boolean).join('<br>');
+				marker.bindPopup(description);
+				markerBounds.push(marker.getLatLng());
+			});
+
+			if (markerBounds.length === 1) {
+				map.setView(markerBounds[0], 8);
+			} else if (markerBounds.length > 1) {
+				map.fitBounds(markerBounds, { padding: [40, 40] });
+			}
+		})();
+	</script>
+
+</body>
+</html>
