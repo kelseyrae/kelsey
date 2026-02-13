@@ -630,6 +630,27 @@ header nav ul li a.bordered {
     width: calc(50% - 7px);
   }
 }
+#content .experience-list {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 1.5em;
+}
+#content .experience-item h3 {
+  margin-bottom: 0.2em;
+}
+#content .experience-meta {
+  color: #9fb5c2;
+  font-size: 0.9em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 0.4em;
+}
 
 .loaded header {
   -webkit-transform: none;
