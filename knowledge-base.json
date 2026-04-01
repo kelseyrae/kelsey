@@ -1,0 +1,250 @@
+{
+  "chunks": [
+    {
+      "id": "bio-overview",
+      "category": "background",
+      "subcategory": "introduction",
+      "content": "Kelsey Conophy is a seasoned technical AI product leader, entrepreneur, and startup advisor based in Bozeman, MT. She is open to speaking engagements, advisor appointments, and fractional CPO roles. She builds AI products and leads teams that build AI products. She has 13+ years of experience creating and scaling AI systems across GitHub, Amazon, Intuit, and multiple startups.",
+      "keywords": ["AI product leader", "entrepreneur", "advisor", "CPO", "Bozeman", "Montana", "speaking", "fractional", "13 years"],
+      "time_period": "current",
+      "confidence": "high",
+      "related_chunks": ["bio-experience", "bio-companies", "contact-info"]
+    },
+    {
+      "id": "bio-experience",
+      "category": "background",
+      "subcategory": "expertise",
+      "content": "Kelsey is an AI product leader, entrepreneur, and builder with 13+ years of experience creating and scaling AI systems that operate at global scale. Her expertise spans AI agents, LLMs (Large Language Models), deep learning, reinforcement learning, and machine learning systems including GPT models, Claude, Gemini, Mistral, and custom foundation models. She has led R&D, AI platform, and applied-AI teams across GitHub, Amazon, Intuit and multiple hyper-growth startups including Attentive, Rent the Runway, and Birchbox.",
+      "keywords": ["13 years", "experience", "AI agents", "LLMs", "deep learning", "reinforcement learning", "machine learning", "global scale", "GPT", "Claude", "foundation models"],
+      "time_period": "2012-present",
+      "confidence": "high",
+      "related_chunks": ["bio-overview", "bio-companies", "skills-technical", "bio-leadership"]
+    },
+    {
+      "id": "bio-leadership",
+      "category": "background",
+      "subcategory": "leadership",
+      "content": "Kelsey has 7+ years of experience building and leading high-impact teams of 60+ people with cultures rooted in experimentation, data, and customer obsession. She thrives at the intersection of R&D and applied AI product, turning emerging AI research into scalable, production products that deliver impact. She is most energized by 0-1 invention and scaling 1-n products that push boundaries of what's possible with AI. She has generated over $2B in value through B2C, B2B, and B2B2C products.",
+      "keywords": ["leadership", "teams", "60+ people", "7 years", "experimentation", "data", "customer obsession", "R&D", "0-1", "1-n", "$2B value"],
+      "time_period": "2017-present",
+      "confidence": "high",
+      "related_chunks": ["bio-experience", "leadership-team-sizes", "product-types-b2c-b2b-b2b2c"]
+    },
+    {
+      "id": "bio-personal",
+      "category": "personal",
+      "subcategory": "interests",
+      "content": "Kelsey is based in Bozeman, MT. In her spare time she enjoys skiing the backcountry and climbing the limestone faces in beautiful southwest Montana.",
+      "keywords": ["skiing", "backcountry", "climbing", "limestone", "Montana", "Bozeman", "hobbies", "outdoor"],
+      "time_period": "current",
+      "confidence": "high",
+      "related_chunks": ["bio-overview", "contact-info"]
+    },
+    {
+      "id": "work-github-2024",
+      "category": "experience",
+      "subcategory": "current",
+      "company": "GitHub",
+      "role": "Principal Product Manager",
+      "content": "GitHub - Principal Product Manager, AI Coding Agents & Copilot Growth (August 2024 to Present, Bozeman, MT). Led GitHub Spark with 500K+ users, driving 14% of new paid Copilot subscribers. Founded Copilot PLG swat team achieving 15X subscriber growth in under 6 months through global launch of Copilot Free. Directed multi-track AI platform initiatives including Models and Agents offerings. Led AI thought leadership through executive customer briefings, analyst engagements, and public speaking.",
+      "keywords": ["GitHub", "Principal PM", "AI Coding Agents", "Copilot", "GitHub Spark", "500K users", "PLG", "15X growth", "2024", "current role", "Copilot Free"],
+      "time_period": "2024-present",
+      "confidence": "high",
+      "related_chunks": ["achievements-github", "bio-companies"]
+    },
+    {
+      "id": "work-intuit-2022-2024",
+      "category": "experience",
+      "subcategory": "recent",
+      "company": "Intuit",
+      "role": "Director Product Management",
+      "content": "Intuit - Director Product Management, AI Discovery (July 2022 to August 2024, Bozeman, MT). Led development of novel products using emerging and frontier AI including Agentic AI and Small Language Models. Launched Intuit Assist generative AI assistant to 3 business units in under 6 months, reducing customer support escalations by over 40% and decreasing expert time by over 30%. Inventor with 6 patent filings for novel use of LLMs including web scraping and content identification. Directed cross-organizational product vision, strategy, execution, customer research, rapid experimentation, and executive presentations. Worked with Intuit's Foundation LLM FILM and public LLMs including GPT 3.5 & 4, Gemini, Claude 3 Opus & Haiku, and Mistral Large.",
+      "keywords": ["Intuit", "Director PM", "AI Discovery", "Intuit Assist", "Agentic AI", "Small Language Models", "6 patents", "40% reduction", "30% time savings", "LLM", "FILM", "2022-2024"],
+      "time_period": "2022-2024",
+      "confidence": "high",
+      "related_chunks": ["achievements-intuit", "patent-web-scraping", "project-intuit-assist"]
+    },
+    {
+      "id": "work-attentive-2021-2022",
+      "category": "experience",
+      "subcategory": "recent",
+      "company": "Attentive",
+      "role": "Director of Product",
+      "content": "Attentive - Director of Product, Growth (June 2021 to July 2022, Bozeman, MT). Led product strategy for Growth organization. Launched 3 new international markets and 3 new Beta products increasing annual revenue by 15% and expanding topline revenue potential by $300M+. Developed data and experiment-driven product development approach that accelerated launch velocity by 2X. Grew Growth PM team from 2 to 8 in under 4 months. Oversaw 10 direct reports (8 PMs, 2 Designers) with cross-functional team of 50.",
+      "keywords": ["Attentive", "Director of Product", "Growth", "international expansion", "15% revenue increase", "$300M", "2X velocity", "team building", "2021-2022"],
+      "time_period": "2021-2022",
+      "confidence": "high",
+      "related_chunks": ["achievements-attentive"]
+    },
+    {
+      "id": "work-amazon-2019-2021",
+      "category": "experience",
+      "subcategory": "recent",
+      "company": "Amazon",
+      "role": "Senior Technical Product Manager",
+      "content": "Amazon - Senior Technical Product Manager, Core AI & Demand Forecasting (October 2019 to June 2021, New York, NY). Directed vision and execution for 5 cross-functional AI/ML technical platform teams (60 staff) driving critical global systems representing over $25B in GMS. Achieved 96% buying automation rate for WW Softlines business (60% improvement) with deep learning models improving forecast accuracy by 32% (2000+bps) on $10B in GMS. Increased allocation of COVID critical products by 40% driving over $550M in investments. Improved forecast accuracy of out-of-stock products ($7.4B GMS) by 12% with reinforcement learning model.",
+      "keywords": ["Amazon", "Senior TPM", "AI/ML", "Demand Forecasting", "60 staff", "$25B GMS", "96% automation", "deep learning", "reinforcement learning", "COVID response", "2019-2021"],
+      "time_period": "2019-2021",
+      "confidence": "high",
+      "related_chunks": ["achievements-amazon"]
+    },
+    {
+      "id": "work-arta-2018-2019",
+      "category": "experience",
+      "subcategory": "previous",
+      "company": "ARTA Shipping",
+      "role": "Head of Product",
+      "content": "ARTA Shipping - Head of Product (February 2018 to October 2019, New York, NY). Headed product and engineering for AI-powered logistics platform. Achieved 145% bookings growth with launch of AI-powered Instant Quote, ARTA Platform & API. Secured first 3 enterprise customers through customer conversations and contract negotiations. Expanded to 3 new verticals, 2 new tiers of service and supported international expansion into EU, APAC, and Middle East, increasing TAM 5X and growing topline revenue by 60%. Increased ops team efficiency by 120% through automation including automated accounting, document management, and vendor communications. Built and led cross-functional technical team of 8 engineers, data scientists, designers and QA.",
+      "keywords": ["ARTA Shipping", "Head of Product", "logistics", "AI-powered", "145% growth", "120% efficiency", "international expansion", "5X TAM", "3 enterprise customers", "2018-2019"],
+      "time_period": "2018-2019",
+      "confidence": "high",
+      "related_chunks": ["achievements-arta-detailed"]
+    },
+    {
+      "id": "work-rent-the-runway-2017-2018",
+      "category": "experience",
+      "subcategory": "previous",
+      "company": "Rent the Runway",
+      "role": "Lead Product Manager",
+      "content": "Rent the Runway - Lead Product Manager, Operations Platform (May 2017 to February 2018, New York, NY). Led 16-person Operations Platform team supporting over 1.5K operations customers and millions of end consumers. Responsible for ML-powered inventory optimization, fulfillment management, shipping network, and warehouse applications. Reduced turnaround time by 40% with end-to-end fulfillment center automation reducing human touches from 20+ to 4. Reduced fulfillment errors by 60% and improved on-time deliveries by 20% with ML-powered automated exceptions management system. Launched multi-node fulfillment platform enabling expansion to 6 new FCs across US. Reduced shipping costs by 20% and shipping timelines by 15% with introduction of Same-Day-Shipping capabilities across 5 metro-areas in the US.",
+      "keywords": ["Rent the Runway", "Lead PM", "Operations Platform", "robotic automation", "ML systems", "40% faster fulfillment", "60% error reduction", "6 new FCs", "same-day shipping", "2017-2018"],
+      "time_period": "2017-2018",
+      "confidence": "high",
+      "related_chunks": ["achievements-rent-the-runway-detailed"]
+    },
+    {
+      "id": "work-birchbox-2015-2017",
+      "category": "experience",
+      "subcategory": "previous",
+      "company": "Birchbox",
+      "role": "Lead Product Manager",
+      "content": "Birchbox - Lead Product Manager, Subscription & Engagement (October 2015 to April 2017, New York, NY). Oversaw 12-person technical team delivering digital and physical membership experiences for millions of customers across US, CA, and EU. Launched first suite of personalization capabilities and ML recommender system increasing visitor engagement by 25% and on-site conversion by 20%. Led company-wide initiative to launch next generation subscription experience increasing revenue per subscriber by 35% and margin by 50% through collaboration with engineering, design, science, marketing, merchandising, ops and content. Increased shop spend of subscribers by 43% with launch of new on-site monthly box experience.",
+      "keywords": ["Birchbox", "Lead PM", "Subscription", "Engagement", "personalization", "ML recommender", "35% revenue increase", "50% margin improvement", "2015-2017"],
+      "time_period": "2015-2017",
+      "confidence": "high",
+      "related_chunks": ["achievements-birchbox-detailed"]
+    },
+    {
+      "id": "work-workzeit-2012-2015",
+      "category": "experience",
+      "subcategory": "startup",
+      "company": "Workzeit",
+      "role": "Founder & CEO",
+      "content": "Workzeit - Founder & CEO (January 2012 to October 2015, San Francisco, CA). Founded AI recruiting startup, built company from 0 to 1 leveraging NLP and Classical Machine Learning to help companies hire and grow top talent. Grew business from zero to $1M in ARR with team of 8 within 3 years through effective leadership and relentless focus on customer needs. Developed proprietary NLP and machine learning models that identified top performers with 80% accuracy. Hired staff, developed product vision, and drove technical execution while leading sales, go-to-market strategy, and fundraising efforts. Accepted into highly selective Alchemist Accelerator (Class VII) and Citrix Innovators Programs (Cohort 1).",
+      "keywords": ["Workzeit", "Founder", "CEO", "AI recruiting", "startup", "$1M ARR", "NLP", "80% accuracy", "Alchemist Accelerator", "Citrix", "0 to 1", "2012-2015"],
+      "time_period": "2012-2015",
+      "confidence": "high",
+      "related_chunks": ["achievements-workzeit-detailed", "project-workzeit"]
+    },
+    {
+      "id": "project-intuit-assist",
+      "category": "projects",
+      "subcategory": "major",
+      "content": "Intuit Assist for Help Interactions is Intuit's Generative AI assistant that helps customers and experts get support and complete tasks more efficiently and easily. Kelsey led the launch to 3 business units in under 6 months, reducing customer support escalations by over 40% and decreasing expert time by over 30%. Technologies used include Intuit's Foundation LLM FILM, and public and open source LLMs including GPT 3.5 & 4, Gemini, Claude 3 Opus & Haiku, and Mistral Large.",
+      "keywords": ["Intuit Assist", "Intuit", "Generative AI", "assistant", "support", "LLM", "FILM", "GPT", "Gemini", "Claude", "Mistral", "40% reduction"],
+      "time_period": "2022-2024",
+      "confidence": "high",
+      "related_chunks": ["work-intuit-2022-2024", "achievements-intuit"]
+    },
+    {
+      "id": "project-github-spark",
+      "category": "projects",
+      "subcategory": "major",
+      "content": "GitHub Spark is an AI coding agent led by Kelsey as Principal PM. It achieved 500K+ users and drives 14% of new paid Copilot subscribers. The project represents a major innovation in AI-powered coding assistance.",
+      "keywords": ["GitHub Spark", "500K users", "14% subscribers", "AI coding agent", "Copilot"],
+      "time_period": "2024-present",
+      "confidence": "high",
+      "related_chunks": ["work-github-2024", "achievements-github"]
+    },
+    {
+      "id": "projects-side",
+      "category": "projects",
+      "subcategory": "side",
+      "content": "Kelsey has built several side projects: Sticky Notes (a simple meeting notes app for anyone), Catalyst SPORT App (a workout tracking app for personal trainers and their clients), Catalyst SPORT Client Portal (a client management platform for personal trainers), Workzeit (a cultural-fit candidate assessment tool for recruiters available at workzeit.com), and WorkTapp/PlayTapp (personality-based networking Android apps).",
+      "keywords": ["Sticky Notes", "meeting notes", "Catalyst SPORT", "workout tracking", "personal trainers", "Workzeit", "recruiting", "WorkTapp", "PlayTapp", "side projects"],
+      "time_period": "various",
+      "confidence": "high",
+      "related_chunks": ["work-workzeit-2012-2015"]
+    },
+    {
+      "id": "skills-technical",
+      "category": "skills",
+      "subcategory": "technical",
+      "content": "Kelsey has deep expertise in AI agents, LLMs (Large Language Models), deep learning, reinforcement learning, and machine learning systems. She has worked with technologies including GPT models (3.5, 4), Claude (Opus, Haiku), Gemini, Mistral Large, and custom foundation models like Intuit's FILM. She also has expertise in Generative AI including fine-tuning, prompt engineering, RAG (Retrieval-Augmented Generation), RLHF (Reinforcement Learning from Human Feedback), CoT (Chain-of-Thought), IFT (Instruction Fine-Tuning), and few-shot learning. She has experience with NLP (Natural Language Processing) and Classical Machine Learning.",
+      "keywords": ["AI agents", "LLMs", "deep learning", "reinforcement learning", "machine learning", "GPT", "Claude", "Gemini", "Mistral", "foundation models", "fine-tuning", "prompt engineering", "RAG", "RLHF", "NLP"],
+      "time_period": "2012-present",
+      "confidence": "high",
+      "related_chunks": ["bio-experience", "skills-product", "competencies-generative-ai-detailed"]
+    },
+    {
+      "id": "skills-product",
+      "category": "skills",
+      "subcategory": "product",
+      "content": "Kelsey excels at AI product leadership, Product Strategy & Management, R&D, applied AI, building AI platforms, and leading technical teams. She specializes in turning research into production products and scaling AI systems. Core competencies include Product-Led Growth (PLG), Ecosystem & Platform Strategy, Executive & Investor Communication, Cross-Functional Leadership, User Research & UX Design, Analytics & Experimentation, Go-to-Market Strategy, Agile Development, Rapid Prototyping, Entrepreneurship, Product Roadmapping & Execution, and Business Strategy. She is skilled at guiding 0-1 and 1-n product development.",
+      "keywords": ["product leadership", "R&D", "applied AI", "AI platforms", "technical leadership", "research to production", "scaling", "PLG", "0-1", "1-n", "GTM", "Agile", "UX", "strategy"],
+      "time_period": "2012-present",
+      "confidence": "high",
+      "related_chunks": ["bio-leadership", "bio-experience"]
+    },
+    {
+      "id": "education",
+      "category": "education",
+      "subcategory": "all",
+      "content": "Kelsey has a strong educational background: Columbia University Engineering (NYC) - Applied Data Science Certification; Parsons School for Design (NYC) - BBA Strategic Design & Management; University of Southern California (Los Angeles) - BA Economics & Social Sciences (Transferred).",
+      "keywords": ["Columbia University", "Applied Data Science", "Parsons", "BBA", "Strategic Design", "USC", "Economics", "education"],
+      "time_period": "completed",
+      "confidence": "high",
+      "related_chunks": ["bio-experience"]
+    },
+    {
+      "id": "contact-info",
+      "category": "contact",
+      "subcategory": "all",
+      "content": "Kelsey Conophy can be contacted via email at kelseyconophy@gmail.com or phone at 310-367-5275. She is on LinkedIn at linkedin.com/in/kelseyconophy and GitHub at github.com/kelseyrae. She is based in Bozeman, MT and is open to speaking engagements, advisor appointments, and fractional CPO roles.",
+      "keywords": ["contact", "email", "kelseyconophy@gmail.com", "phone", "310-367-5275", "LinkedIn", "GitHub", "Bozeman", "speaking", "advisor", "CPO", "fractional"],
+      "time_period": "current",
+      "confidence": "high",
+      "related_chunks": ["bio-overview", "bio-personal"]
+    },
+    {
+      "id": "achievements-summary",
+      "category": "achievements",
+      "subcategory": "summary",
+      "content": "Kelsey has generated over $2B in value through B2C, B2B, and B2B2C products. Major achievements include: GitHub Spark with 500K+ users driving 14% of new paid Copilot subscribers and 15X subscriber growth through Copilot Free launch; Intuit Assist reducing support escalations by 40% with 6 patent filings; Amazon achieving 96% automation with 32% forecast accuracy improvement on $10B GMS; Attentive launching 3 international markets increasing revenue by 15% and expanding potential by $300M+; ARTA achieving 145% bookings growth and 5X TAM expansion; Rent the Runway reducing turnaround time by 40% and errors by 60%; Birchbox increasing revenue per subscriber by 35% and margin by 50%; Workzeit growing to $1M ARR with 80% accuracy NLP models and acceptance into Alchemist Accelerator.",
+      "keywords": ["$2B value", "achievements", "GitHub Spark", "500K users", "15X growth", "Intuit Assist", "40% reduction", "6 patents", "96% automation", "$300M", "145% growth", "35% revenue", "50% margin", "$1M ARR"],
+      "time_period": "2012-present",
+      "confidence": "high",
+      "related_chunks": ["work-github-2024", "work-intuit-2022-2024", "work-amazon-2019-2021", "work-attentive-2021-2022"]
+    },
+    {
+      "id": "leadership-details",
+      "category": "leadership",
+      "subcategory": "teams",
+      "content": "Kelsey has extensive experience building and leading teams of varying sizes: At Amazon, directed 5 cross-functional AI/ML teams totaling 60 staff. At Rent the Runway, led 16-person Operations Platform team. At Birchbox, oversaw 12-person technical team. At Attentive, managed 10 direct reports (8 PMs, 2 Designers) with cross-functional team of 50 and grew Growth PM team from 2 to 8 in under 4 months. At ARTA, hired and oversaw cross-functional team of 8 engineers, scientists, designers, and QA. At Workzeit, built team of 8. She has 7+ years of experience building and managing technical teams cultivating cultures of customer obsession and data-driven innovation.",
+      "keywords": ["team leadership", "60 staff", "16-person team", "12-person team", "10 direct reports", "team building", "hiring", "cross-functional", "7+ years leadership"],
+      "time_period": "2015-present",
+      "confidence": "high",
+      "related_chunks": ["bio-leadership"]
+    },
+    {
+      "id": "industries",
+      "category": "background",
+      "subcategory": "industries",
+      "content": "Kelsey has experience across multiple industries including SaaS, developer tools, e-commerce, supply chain & logistics, marketing technology, fashion retail, subscription services, and recruiting/HR technology. She has worked with B2C, B2B, and B2B2C business models.",
+      "keywords": ["SaaS", "developer tools", "e-commerce", "supply chain", "logistics", "marketing technology", "fashion retail", "subscription services", "recruiting", "HR technology", "B2C", "B2B", "B2B2C"],
+      "time_period": "2012-present",
+      "confidence": "high",
+      "related_chunks": ["bio-experience", "bio-companies"]
+    },
+    {
+      "id": "patents",
+      "category": "achievements",
+      "subcategory": "ip",
+      "content": "Kelsey is an inventor with 6 patent filings for novel use of LLMs at Intuit. She is the lead inventor on a patent filing for novel use of LLMs for web scraping and content identification.",
+      "keywords": ["patents", "6 patents", "lead inventor", "LLMs", "web scraping", "content identification", "Intuit", "IP", "intellectual property"],
+      "time_period": "2022-2024",
+      "confidence": "high",
+      "related_chunks": ["work-intuit-2022-2024", "achievements-summary"]
+    }
+  ]
+}
